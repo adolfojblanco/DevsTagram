@@ -24,7 +24,7 @@
         <h2 class="font-black text-center text-3xl mb-10">@yield('title')</h2>
         @yield('content')
     </main>
-    <footer class="text-center text-gray-500 uppercase">
+    <footer class="mt-5 text-center text-gray-500 uppercase">
         DevsTagram - Todos los derechos reservados {{now() -> year}}
     </footer>
 </body>
