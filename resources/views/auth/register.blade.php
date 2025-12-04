@@ -11,7 +11,8 @@ Regístrate en DevsTagram
         <p>Imagne aqui</p>
     </div>
     <div class="md:w-1/2 bg-white p-6 rounded-lg shadow-xl">
-        <form action="">
+        <form action="{{route('register')}}" method="POST">
+            @csrf
             <div>
                 <label
                     id="name"
@@ -20,8 +21,10 @@ Regístrate en DevsTagram
                 </label>
                 <input
                     type="text"
-                    id="username"
+                    id="name"
+                    name="name"
                     placeholder="Nombre de usuario"
+                    value="{{old('name')}}"
                     class="border p-3 w-full rounded-lg">
             </div>
             <div class="pt-2">
@@ -31,8 +34,10 @@ Regístrate en DevsTagram
                     Email:
                 </label>
                 <input
-                    type="text"
+                    type="email"
                     id="email"
+                    value="{{old('email')}}"
+                    name="email"
                     placeholder="Correo Electronico"
                     class="border p-3 w-full rounded-lg">
             </div>
@@ -43,8 +48,9 @@ Regístrate en DevsTagram
                     Contraseña:
                 </label>
                 <input
-                    type="text"
+                    type="password"
                     id="password"
+                    name="password"
                     placeholder="Tu contraseña"
                     class="border p-3 w-full rounded-lg">
             </div>
@@ -52,6 +58,9 @@ Regístrate en DevsTagram
                 type="submit"
                 value="Crear Cuenta"
                 class=" mt-3 bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg">
+                @error('name')
+                <p class="text-alert">{{$message}}</p>
+                @enderror
         </form>
     </div>
 </div>
