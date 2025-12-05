@@ -13,5 +13,6 @@ Route::get('/entrar', [RegisterController::class, 'index']);
 
 Route::get('/crear-cuenta', [RegisterController::class, 'index'])->name('register');
 Route::post('/crear-cuenta', [RegisterController::class, 'store']);
+Route::get('login', [LoginController::class, 'index']);
 
-Route::get('/muro', [PostController::class, 'index'])->name('posts.index');
+Route::get('/muro', [PostController::class, 'index'])->name('posts.index')->middleware('auth');
