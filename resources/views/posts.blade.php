@@ -6,6 +6,16 @@ Posts de Usuarios
 
 
 @section('content')
-
+    <div class="flex justify-center">
+        <div class="w-full md:w-8/12 lg:w-6/12 md:flex">
+            <div class="md:w-8/12 lg:w-6/12 px-5">
+                <h1>HOLA</h1>
+            </div>
+            <div class="md:w-8/12 lg:w-6/12 px-5">
+                <p class="text-gray-700 text-2xl">
+                    {{ auth()->user()->name }}
+                </p>
+            </div>
+        </div>
 @endsection
 
