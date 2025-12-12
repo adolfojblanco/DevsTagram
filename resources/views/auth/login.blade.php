@@ -36,6 +36,9 @@
                     <input type="password" id="password" name="password" placeholder="Tu contraseña"
                         class="border p-3 w-full rounded-lg">
                 </div>
+                <div class="mb-5 mt-2">
+                    <input type="checkbox" name="remember"> <label>Mantener Sesión</label>
+                </div>
                 <input type="submit" value="Inicia Sesión"
                     class=" mt-3 bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg">
             </form>

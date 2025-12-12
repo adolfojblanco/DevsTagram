@@ -14,7 +14,6 @@
         <div class="md:w-1/2 bg-white p-6 rounded-lg shadow-xl">
             <form action="{{ route('register') }}" method="POST">
                 @csrf
-
                 <div>
                     <label id="name" class="mb-2 block uppercase text-gray-500 font-bold">
                         Nombre:
