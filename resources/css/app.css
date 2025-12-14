@@ -10,6 +10,18 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+.card {
+    @apply bg-white p-6 rounded-lg shadow-xl
+}
+
 .text-alert {
     @apply bg-red-500 text-white my-2 rounded-lg text-sm p-1 text-center
+}
+
+.form-label {
+    @apply mb-1 mt-2 block uppercase text-gray-500 font-bold
+}
+
+.form-input {
+    @apply border p-3 w-full rounded-lg
 }

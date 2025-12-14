@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class LoginController extends Controller
 {
@@ -22,7 +23,7 @@ class LoginController extends Controller
         if(!auth()->attempt($request->only('email', 'password'), $request->remember)) {
             return back()->with(['mensaje', 'Credeciales incorrectas']);
         }
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index', Str::of(auth()->user()->name)->slug('-'));
     }
 
     public function logout() {
