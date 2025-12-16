@@ -11,3 +11,5 @@ const dropzone = new Dropzone("#dropzone", {
     maxFiles: 1,
     uploadMultiple: false,
 });
+
+dropzone.on("sending", function (file, xhr, formData) {});
