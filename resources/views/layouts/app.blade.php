@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DevsTagram - @yield('title')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
 </head>
 
 <body class="bg-gray-100">
@@ -52,6 +53,7 @@
     <footer class="mt-5 text-center text-gray-500 uppercase">
         DevsTagram - Todos los derechos reservados {{ now()->year }}
     </footer>
+    @livewireScripts
 </body>
 
 </html>
