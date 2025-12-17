@@ -28,7 +28,11 @@
                         Descripción:
                     </label>
                     <textarea id="title" name="title" type="text" placeholder="Descripción de la públicacion"
-                        class="form-input @error('title') border-red-500 @enderror">{{ old('description') }}</textarea>
+                        class="form-input @error('title') border-red-500 @enderror">{{ old('description') }}
+                    </textarea>
+                </div>
+                <div class="mb-5">
+                    <input type="hidden" name="image">
                 </div>
                 <input type="submit" value="Crear Post"
                     class="mt-3 bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg" />

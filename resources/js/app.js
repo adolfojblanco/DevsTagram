@@ -10,6 +10,18 @@ const dropzone = new Dropzone("#dropzone", {
     dictRemoveFile: "Borrar Archivo",
     maxFiles: 1,
     uploadMultiple: false,
+
+    init: function() {
+        if(document.querySelector('[name="image"]').value.trim()){
+            const imagenPu = {};
+            imagenPu.size = 1234;
+            imagenPu.name = document.querySelector('[name="image"]').value;
+        }
+    },
 });
 
-dropzone.on("sending", function (file, xhr, formData) {});
+
+
+dropzone.on("success", function (file, response) {
+    document.querySelector('[name="image"]').value = response.image
+});

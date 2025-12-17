@@ -20,7 +20,17 @@ class PostController extends Controller
         return View('dashboard');
     }
 
-    public function create() {
-      return view('posts.create');
+    public function create()
+    {
+        return view('posts.create');
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'title' => 'required|max:255',
+            'description' => 'required|max:255'
+        ]);
+        return view('posts.create');
     }
 }
