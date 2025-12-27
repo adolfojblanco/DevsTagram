@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Intervention\Image\Format;
 use Intervention\Image\Laravel\Facades\Image;
 
 class ImageController extends Controller

@@ -14,7 +14,16 @@
             </form>
         </div>
         <div class="md:w-1/2 px-10 card mt-5 md:mt-0">
-            <form action="{{ route('register') }}" method="POST" novalidate enctype="multipart/form-data">
+            @if ($errors->any())
+                <div class="text-alert">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <form action="{{ route('posts.store') }}" method="POST" novalidate enctype="multipart/form-data">
                 @csrf
                 <div>
                     <label id="title" class="form-label">
@@ -27,9 +36,8 @@
                     <label id="title" class="form-label">
                         Descripción:
                     </label>
-                    <textarea id="title" name="title" type="text" placeholder="Descripción de la públicacion"
-                        class="form-input @error('title') border-red-500 @enderror">{{ old('description') }}
-                    </textarea>
+                    <textarea id="title" name="description" type="text" placeholder="Descripción de la públicacion"
+                        class="form-input @error('title') border-red-500 @enderror">{{ old('description') }}</textarea>
                 </div>
                 <div class="mb-5">
                     <input type="hidden" name="image">

@@ -23,6 +23,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/{name}', [PostController::class, 'index'])->name('posts.index')->middleware('auth');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
-Route::post('/posts/create', [PostController::class, 'create'])->name('posts.store');
+Route::post('/posts/store', [PostController::class, 'store'])->name('posts.store');
 
 Route::post('/images', [ImageController::class, 'store'])->name('images.store');
