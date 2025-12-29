@@ -28,13 +28,20 @@
     </div>
     <section class="container mx-auto my-10">
         <h2 class="text-4xl text-center font-black my-10">Publicaciones</h2>
-        @foreach ($posts as $post)
-        <div>
-            
-            <a>
-                <img src="{{ $post->image }}" alt="imagen del post {{ $post->title }}">
-            </a>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            @if ($posts->count())
+                @foreach ($posts as $post)
+                    <div>
+                        <a>
+                            <img src="{{ asset('uploads') . '/' . $post->image }}"
+                                alt="imagen del post {{ $post->title }}">
+                        </a>
+                    </div>
+                @endforeach
+            @else
+                <p class="text-gray-600 uppercase text-sm text-center font-bold">No hay post</p>
+            @endif
+
         </div>
-        @endforeach
     </section>
 @endsection
